@@ -1,0 +1,33 @@
+.pagination-container {
+  display: flex; /* Aligns items horizontally */
+  justify-content: center; /* Centers the items horizontally */
+  align-items: center; /* Vertically aligns the items (optional) */
+  gap: 10px; /* Adds spacing between numbers */
+  padding: 10px; /* Adds padding inside the container */
+  background-color: #f5f5f5; /* Optional background color for the container */
+  border-radius: 8px; /* Optional rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.page-item {
+  padding: 8px 12px; /* Adds padding around the number */
+  font-size: 16px; /* Adjusts the font size */
+  font-weight: bold; /* Makes the text bold */
+  color: #333; /* Text color */
+  border: 1px solid #ccc; /* Adds a border around the number */
+  border-radius: 4px; /* Rounds the corners */
+  cursor: pointer; /* Changes cursor to a pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.page-item:hover {
+  background-color: #007bff; /* Changes background color on hover */
+  color: #fff; /* Changes text color on hover */
+  border-color: #007bff; /* Matches border color with background */
+}
+
+.page-item.active {
+  background-color: #007bff; /* Active page background */
+  color: #fff; /* Active page text color */
+  border-color: #007bff; /* Active page border */
+}
