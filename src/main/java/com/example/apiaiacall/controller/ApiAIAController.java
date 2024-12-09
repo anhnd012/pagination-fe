@@ -55,7 +55,7 @@ public class ApiAIAController {
     @GetMapping("/jira-excel-data")
     public Mono<List<ExcelColumnsDto>> getJiraExcelData() {
         return webClient.get()
-                .uri("/rest/api/2/search?jql=assignee IN (5fbb3156aa1d30006ff2799d, 62fc55535fc3a72bda944d9a, 62fdbcaa43e43992b9a2fb4e, 712020:d38bbaf3-2b1a-454b-8da3-f8f320a5ce45, 712020:bbc7a667-0d86-4fde-9faa-2ae826f0f1c4, 712020:b9088dd5-c814-4bfa-8770-659099ccd1e3, 627dd3266ba8640069cfb086, 6269120434b9b700687b3b7c, 6417d9fd67102fc717c09586) AND project IN (AD, CS, PD, POS, OS) AND status IN (Closed, Escalated, \"In Progress\", \"In Progress\", Open, Pending, Reopened, Resolved, \"Waiting for customer\", \"Waiting for support\", Done) AND created >= \"2024-09-01\" AND type IN (Problem, Support, Bug) AND created <= \"2024-09-24\" ORDER BY resolution ASC, created DESC&startAt=0&maxResults=100")
+                .uri("/rest/api/2/search?jql=assignee IN (5fbb3156aa1d30006ff2799d, 62fc55535fc3a72bda944d9a, 62fdbcaa43e43992b9a2fb4e, 712020:d38bbaf3-2b1a-454b-8da3-f8f320a5ce45, 712020:bbc7a667-0d86-4fde-9faa-2ae826f0f1c4, 712020:b9088dd5-c814-4bfa-8770-659099ccd1e3, 627dd3266ba8640069cfb086, 6269120434b9b700687b3b7c, 6417d9fd67102fc717c09586) AND project IN (AD, CS, PD, POS, OS) AND status IN (Closed, Escalated, \"In Progress\", \"In Progress\", Open, Pending, Reopened, Resolved, \"Waiting for customer\", \"Waiting for support\", Done) AND created >= \"2024-09-01\" AND type IN (Problem, Support, Bug) AND created <= \"2024-09-24\" ORDER BY resolution ASC, created DESC&startAt=0&maxResults=96")
                 .retrieve()
                 .bodyToMono(AiaDto.class)
                 .flatMap(this::processJiraDataReactive);
