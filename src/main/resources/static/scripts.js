@@ -25,7 +25,6 @@ async function fetchDataAndStore() {
             rows.forEach(element => {
                 element.remove();
             });
-            // table.innerHTML = "";
 
             const page = Number(event.target.textContent);
             for (let k = 0; k < paginatedData.get(page).length; k++) {
@@ -44,33 +43,7 @@ async function fetchDataAndStore() {
     }
 
     await loadingFirstPage(paginatedData, table);
-
-    // for (let k = 0; k < paginatedData.get(1).length; k++) {
-    //     const tr = document.createElement("tr");
-    //     for (let keyValue in paginatedData.get(1)[k]) {
-    //         console.log(paginatedData.get(1)[k][keyValue]);
-    //         const td = document.createElement("td");
-    //         td.textContent = paginatedData.get(1)[k][keyValue];
-    //         tr.appendChild(td);
-    //     }
-    //     table.appendChild(tr);
-    // }
 }
-
-// for (let index = 0; index < getData.length; index++) {
-//     const tr = document.createElement("tr");
-
-//     console.log(getData[index]);
-
-//     for (let key in getData[index]) {
-//         const td = document.createElement("td");
-//         td.textContent = getData[index][key];
-//         tr.appendChild(td);
-//     }
-
-
-//     table.appendChild(tr);
-// }
 
 
 fetchDataAndStore();
